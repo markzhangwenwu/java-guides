@@ -1,18 +1,16 @@
 package com.nivelle.spring;
 
 import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
-import com.nivelle.spring.springcore.listener.contextevent.MyContextClosedEventListenerListener;
-import com.nivelle.spring.springcore.listener.contextevent.MyContextRefreshedEventListener;
-import com.nivelle.spring.springcore.listener.contextevent.MyContextStartedEventListener;
-import com.nivelle.spring.springcore.listener.contextevent.MyContextStopedEventEventListener;
-import com.nivelle.spring.springcore.listener.springevent.*;
+import com.nivelle.spring.springcore.annotation.MyTypeFilter;
+import com.nivelle.spring.springcore.event.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @SpringBootApplication
 /**
@@ -30,7 +28,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 /**
  * @ComponentScan.Filter 使用过滤器来指定要自动扫描
  */
-//@ComponentScan(includeFilters ={@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE,classes = {MyTypeFilter.class})})
+@ComponentScan(includeFilters ={@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE,classes = {MyTypeFilter.class})})
 public class SpringAllApplication {
     public static void main(String[] args) {
         SpringApplication springApplication = new SpringApplication(SpringAllApplication.class);

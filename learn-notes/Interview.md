@@ -80,7 +80,7 @@
 - [序列化](https://juejin.im/post/5b4c69dcf265da0fa959aa06)
 - [位运算](https://blog.csdn.net/xiaopihaierletian/article/details/78162863)
 - [快速失败，安全失败](https://blog.csdn.net/ch717828/article/details/46892051)
-
+- [类的实例化和初始化](https://www.cnblogs.com/yulibostu/articles/10796128.html)
 #### 动态代理
 - [基于CGLIB](https://juejin.im/post/5b3e05caf265da0f652364ce)
 - [基于JDK](https://juejin.im/post/5b39dee0e51d4558cc35e3a5)
@@ -183,6 +183,7 @@
 - [zk选举过程分析](http://shift-alt-ctrl.iteye.com/blog/1846562)
 - [zkWatcher机制分析](http://shift-alt-ctrl.iteye.com/blog/1847320)
 - [集群节点个数](https://blog.csdn.net/u010476994/article/details/79806041)
+- [zk知识点合集](https://mp.weixin.qq.com/s/K4ovR9T0merQRdUv9h580A)
 
 #### 分布式事物
 - [分布式事物解决方案](https://juejin.im/post/5cb967cbe51d456e403772b5?utm_source=gold_browser_extension)
