@@ -126,8 +126,8 @@
 
   - beanFactory.registerSingleton("springBootBanner", printedBanner);//注册单实例:springBootBanner
 
-  - beanFactory instanceof DefaultListableBeanFactory? true ;//beanFactory.setAllowBeanDefinitionOverriding()设置beanDefinition是否可以重写
-  
+  - beanFactory instanceof DefaultListableBeanFactory? true ;//beanFactory.setAllowBeanDefinitionOverriding()设置设置是否允许通过注册具有相同名称的不同定义来覆盖bean定义，并自动替换前者。否则，将引发异常。默认值为“true”。
+                                                                                                               
   - context.addBeanFactoryPostProcessor(new LazyInitializationBeanFactoryPostProcessor());//如果设置 lazyInitialization 为true 则bean为懒汉模式，默认为饥汉模式，通过beanFactoryPostProcessor实现
   
   - getAllSources(); 
@@ -242,7 +242,25 @@
 
   - refresh(context);//子类 Spring源码分析值refresh()方法; [Spring refresh()方法](../springcore/Spring源码解析之refresh()方法.md)
 
+  - context.registerShutdownHook() //注册优雅关机钩子
+  
+    - doClose(); //新起一个线程 名字 SpringContextShutdownHook 用来处理关机逻辑
+    
+      - publishEvent(new ContextClosedEvent(this)); //Publish shutdown event. 发布容器关闭事件
+      
+      - this.lifecycleProcessor.onClose() //执行所有实现了生命周期接口的后置处理器
+    
+      - destroyBeans();//Destroy all cached singletons in the context's BeanFactory. 清理对象缓存
+      
+      - closeBeanFactory();//Close the state of this context itself. 关闭容器本身
+      
+      - onClose();//钩子函数，子类实现
+      
+      - this.applicationListeners.clear();//Reset local application listeners to pre-refresh state
+      
+      -	this.active.set(false);//设置关闭状态
 
+    
 #### 第十步: 刷新之后
 
 - afterRefresh(context, applicationArguments); //springBoot空实现，容器刷新之后做一些操作
