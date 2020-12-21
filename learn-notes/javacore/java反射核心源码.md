@@ -1,4 +1,3 @@
-
 ### 反射方法
 
 - public Object invoke(Object obj, Object... args) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException
@@ -80,24 +79,3 @@ JSR-292是JVM为动态类型支持而出现的规范,在JAVA7中实现了这个�
 - invokeStatic:调用静态方法（静态分派）
 
 - invokeDynamic:动态方法绑定
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
