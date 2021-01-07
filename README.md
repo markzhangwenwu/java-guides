@@ -1,6 +1,6 @@
 ## java 编程每天学
 
-### java-notes 多数文章来自网上优秀文章摘要整合,仅供记录学习。
+### notes 多数文章来自网上优秀文章摘要整合,学习时自己记录的笔记
 
 ### 依赖环境: 
 
@@ -182,6 +182,15 @@
 #### Netty实践 
 
 ✅【客户端&服务端】
+
+✅【EventLoop】
+
+✅【EventLoopGroup】
+
+✅【ChannelInbound】
+
+✅【ChannelOutbound】
+
 
 #### Mongo实践
 
